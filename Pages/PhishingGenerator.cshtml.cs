@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
-namespace PhishingGenerator.Pages  // Bu namespace'i kullandığınızdan emin olun
+namespace PhishingGenerator.Pages
 {
     public class PhishingGeneratorModel : PageModel
     {
@@ -14,11 +16,9 @@ namespace PhishingGenerator.Pages  // Bu namespace'i kullandığınızdan emin o
         
         public string GeneratedEmail { get; set; }
         
-        // HttpClient ve IConfiguration servisleri için düzeltme
         private readonly IHttpClientFactory _clientFactory;
         private readonly IConfiguration _configuration;
         
-        // Constructor - dependency injection için
         public PhishingGeneratorModel(IHttpClientFactory clientFactory, IConfiguration configuration)
         {
             _clientFactory = clientFactory;
@@ -39,7 +39,8 @@ namespace PhishingGenerator.Pages  // Bu namespace'i kullandığınızdan emin o
             
             try
             {
-                GeneratedEmail = await CallLlmApiAsync(EmailInput);
+                string response = await CallLlmApiAsync(EmailInput);
+                GeneratedEmail = CleanAndFormatResponse(response);
                 return Page();
             }
             catch (Exception ex)
@@ -51,10 +52,115 @@ namespace PhishingGenerator.Pages  // Bu namespace'i kullandığınızdan emin o
         
         private async Task<string> CallLlmApiAsync(string userInput)
         {
-            // API çağrı kodu - basitleştirilmiş örnek
-            await Task.Delay(1000); // Test için gecikme
+            try
+            {
+                string geminiResponse = await CallGeminiApiAsync(userInput);
+                return geminiResponse;
+            }
+            catch (Exception ex)
+            {
+                return $"API çağrısı sırasında hata oluştu: {ex.Message}";
+            }
+        }
+
+        private async Task<string> CallGeminiApiAsync(string userInput)
+        {
+            string apiKey = _configuration["LlmApi:GeminiApiKey"];
             
-            return "Bu bir test yanıtıdır. Gerçek API çağrısı burada yapılacak.";
+            if (string.IsNullOrEmpty(apiKey))
+            {
+                return "Gemini API anahtarı bulunamadı. Lütfen appsettings.json dosyasında 'LlmApi:GeminiApiKey' değerini ayarlayın.";
+            }
+            
+            var client = _clientFactory.CreateClient();
+            
+            string prompt = $"Bir phishing email oluştur. Konu: {userInput}. E-posta gerçekçi olmalı ancak birkaç şüpheli gösterge içermeli. Lütfen From, Subject ve To alanlarını e-postanın başında belirt. E-posta formatını kullan ve sadece e-postayı oluştur, ekstra açıklamalar yapma.";
+            
+            var requestData = new
+            {
+                contents = new[]
+                {
+                    new
+                    {
+                        parts = new[]
+                        {
+                            new { text = prompt }
+                        }
+                    }
+                }
+            };
+            
+            var content = new StringContent(
+                JsonSerializer.Serialize(requestData),
+                Encoding.UTF8,
+                "application/json");
+            
+            var response = await client.PostAsync($"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={apiKey}", content);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                var responseObject = JsonDocument.Parse(responseString);
+                
+                try
+                {
+                    var textContent = responseObject.RootElement
+                        .GetProperty("candidates")[0]
+                        .GetProperty("content")
+                        .GetProperty("parts")[0]
+                        .GetProperty("text")
+                        .GetString();
+                        
+                    return textContent ?? "API yanıt içeriği boş.";
+                }
+                catch (Exception ex)
+                {
+                    return $"API yanıtı işlenirken hata: {ex.Message}\n\nRaw response: {responseString}";
+                }
+            }
+            
+            return $"API yanıt vermedi. Durum kodu: {response.StatusCode}";
+        }
+
+        private string CleanAndFormatResponse(string response)
+        {
+            // "Elbette, işte size..." gibi başlangıçları kaldır
+            string[] introPatterns = new string[] {
+                "Elbette", "İşte size", "İşte bir", "Tabii", "Merhaba", "Tabi",
+                "işte", "aşağıda", "size bir", "burada"
+            };
+            
+            foreach (var pattern in introPatterns)
+            {
+                if (response.IndexOf(pattern, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    int index = response.IndexOf("\n");
+                    if (index > 0)
+                    {
+                        response = response.Substring(index).TrimStart();
+                    }
+                }
+            }
+            
+            // "Sorumluluk Reddi" veya "Not" gibi son bölümleri kaldır
+            string[] outroPatterns = new string[] {
+                "Sorumluluk Reddi", "Not:", "Bu e-posta örneği", "Unutmayın:", "Şüpheli Göstergeler:",
+                "Dikkat Edilmesi Gereken", "Bu bir örnek", "Bu sadece", "Oltalama Göstergeleri"
+            };
+            
+            foreach (var pattern in outroPatterns)
+            {
+                int index = response.IndexOf(pattern, StringComparison.OrdinalIgnoreCase);
+                if (index > 0)
+                {
+                    response = response.Substring(0, index).TrimEnd();
+                }
+            }
+            
+            // Metni düzenle
+            response = response.Replace("###", "").Replace("***", "").Replace("**", "");
+            
+            return response;
         }
     }
 }

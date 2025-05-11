@@ -12,7 +12,10 @@
         </div>
         <div class="card-body">
             <form method="post" id="phishingForm">
-                <div class="input-section">
+                <div class="input-section position-relative">
+                    <div class="loading-overlay d-none" id="loadingOverlay">
+                        <div class="spinner"></div>
+                    </div>
                     <div class="form-floating mb-3">
                         <textarea asp-for="EmailInput" class="form-control custom-textarea" id="emailPrompt" placeholder="Enter topic..." style="height: 120px"></textarea>
                         <label for="emailPrompt">Describe what kind of phishing email you want to generate</label>
@@ -51,7 +54,7 @@
                                 </div>
                                 <div class="email-field">
                                     <span class="field-name">To:</span>
-                                    <span class="field-value">recipient@company.com</span>
+                                    <span class="field-value" id="emailTo">recipient@company.com</span>
                                 </div>
                             </div>
                         </div>
@@ -73,40 +76,4 @@
 
 @section Scripts {
     <script src="~/js/phishingGenerator.js"></script>
-    <script>
-        // Sayfaya ilk girişte form input'una focus yapalım
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('emailPrompt').focus();
-        });
-
-        // Form gönderildiğinde loading animasyonu gösterelim
-        document.getElementById('phishingForm').addEventListener('submit', function() {
-            document.querySelector('.btn-loader').classList.remove('d-none');
-            document.querySelector('.generate-btn').setAttribute('disabled', 'disabled');
-        });
-
-        // Eğer sonuç varsa, sonuç bölümünü gösterelim
-        if (document.getElementById('emailBody').innerHTML.trim() !== '') {
-            document.querySelector('.result-section').classList.remove('d-none');
-        }
-
-        // Kopyalama fonksiyonu
-        function copyToClipboard() {
-            const emailContent = document.getElementById('emailBody').innerText;
-            navigator.clipboard.writeText(emailContent)
-                .then(() => {
-                    const copyButton = document.getElementById('copyButton');
-                    copyButton.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
-                    copyButton.classList.remove('btn-outline-secondary');
-                    copyButton.classList.add('btn-success');
-                    
-                    setTimeout(() => {
-                        copyButton.innerHTML = '<i class="fas fa-copy me-1"></i>Copy';
-                        copyButton.classList.remove('btn-success');
-                        copyButton.classList.add('btn-outline-secondary');
-                    }, 2000);
-                })
-                .catch(err => console.error('Kopyalama başarısız:', err));
-        }
-    </script>
 }
