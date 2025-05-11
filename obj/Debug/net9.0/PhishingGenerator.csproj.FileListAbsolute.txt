@@ -17,7 +17,6 @@
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/scopedcss/bundle/PhishingGenerator.styles.css
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/scopedcss/projectbundle/PhishingGenerator.bundle.scp.css
-/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-b9sayid5wm.gz
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5ozwrxctv8-61n19gt1b8.gz
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/pu15knwkhb-xtxxf3hu2r.gz
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/3qt2cur0ld-bqjiyaj88i.gz
@@ -95,3 +94,6 @@
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/PhishingGenerator.pdb
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/PhishingGenerator.genruntimeconfig.cache
 /Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/ref/PhishingGenerator.dll
+/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/PhishingGenerator.sourcelink.json
+/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-z5blkhfbzg.gz
+/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/4f65xvurrn-0775d7kmek.gz

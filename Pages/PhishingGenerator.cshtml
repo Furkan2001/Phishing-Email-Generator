@@ -1,0 +1,112 @@
+@page
+@model PhishingGenerator.Pages.PhishingGeneratorModel
+@{
+    ViewData["Title"] = "Phishing Generator";
+}
+
+<div class="phishing-generator-container">
+    <div class="card main-card">
+        <div class="card-header">
+            <h1 class="text-center"><i class="fas fa-envelope-open-text me-2"></i>Phishing Email Generator</h1>
+            <p class="text-center text-muted">Create sophisticated phishing email templates with AI assistance</p>
+        </div>
+        <div class="card-body">
+            <form method="post" id="phishingForm">
+                <div class="input-section">
+                    <div class="form-floating mb-3">
+                        <textarea asp-for="EmailInput" class="form-control custom-textarea" id="emailPrompt" placeholder="Enter topic..." style="height: 120px"></textarea>
+                        <label for="emailPrompt">Describe what kind of phishing email you want to generate</label>
+                        <span asp-validation-for="EmailInput" class="text-danger"></span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="form-text text-muted">
+                            <i class="fas fa-info-circle me-1"></i> Example: "Bank account verification email targeting corporate users"
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg generate-btn">
+                            <i class="fas fa-bolt me-2"></i>Generate
+                            <span class="btn-loader d-none"><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="result-section mt-4 @(string.IsNullOrEmpty(Model.GeneratedEmail) ? "d-none" : "")">
+                <div class="result-header d-flex justify-content-between align-items-center mb-2">
+                    <h3><i class="fas fa-envelope me-2"></i>Generated Email</h3>
+                    <button id="copyButton" class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard()">
+                        <i class="fas fa-copy me-1"></i>Copy
+                    </button>
+                </div>
+                <div class="result-content">
+                    <div class="email-preview">
+                        <div class="email-header">
+                            <div class="email-fields">
+                                <div class="email-field">
+                                    <span class="field-name">From:</span>
+                                    <span class="field-value" id="emailFrom">security@example-bank.com</span>
+                                </div>
+                                <div class="email-field">
+                                    <span class="field-name">Subject:</span>
+                                    <span class="field-value" id="emailSubject">URGENT: Your Account Requires Verification</span>
+                                </div>
+                                <div class="email-field">
+                                    <span class="field-name">To:</span>
+                                    <span class="field-value">recipient@company.com</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="email-body" id="emailBody">
+                            @if (!string.IsNullOrEmpty(Model.GeneratedEmail))
+                            {
+                                @Html.Raw(Model.GeneratedEmail.Replace("\n", "<br />"))
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <small class="text-muted">For educational and security testing purposes only</small>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/phishingGenerator.js"></script>
+    <script>
+        // Sayfaya ilk girişte form input'una focus yapalım
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('emailPrompt').focus();
+        });
+
+        // Form gönderildiğinde loading animasyonu gösterelim
+        document.getElementById('phishingForm').addEventListener('submit', function() {
+            document.querySelector('.btn-loader').classList.remove('d-none');
+            document.querySelector('.generate-btn').setAttribute('disabled', 'disabled');
+        });
+
+        // Eğer sonuç varsa, sonuç bölümünü gösterelim
+        if (document.getElementById('emailBody').innerHTML.trim() !== '') {
+            document.querySelector('.result-section').classList.remove('d-none');
+        }
+
+        // Kopyalama fonksiyonu
+        function copyToClipboard() {
+            const emailContent = document.getElementById('emailBody').innerText;
+            navigator.clipboard.writeText(emailContent)
+                .then(() => {
+                    const copyButton = document.getElementById('copyButton');
+                    copyButton.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+                    copyButton.classList.remove('btn-outline-secondary');
+                    copyButton.classList.add('btn-success');
+                    
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="fas fa-copy me-1"></i>Copy';
+                        copyButton.classList.remove('btn-success');
+                        copyButton.classList.add('btn-outline-secondary');
+                    }, 2000);
+                })
+                .catch(err => console.error('Kopyalama başarısız:', err));
+        }
+    </script>
+}

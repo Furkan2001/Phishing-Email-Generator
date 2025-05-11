@@ -29,3 +29,135 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Phishing Generator Styles */
+.phishing-generator-container {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.main-card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  padding: 2rem 1.5rem;
+  border-bottom: none;
+}
+
+.card-header h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.custom-textarea {
+  border: 2px solid #e0e0e0;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  resize: none;
+}
+
+.custom-textarea:focus {
+  border-color: #4b6cb7;
+  box-shadow: 0 0 0 0.25rem rgba(75, 108, 183, 0.25);
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(75, 108, 183, 0.4);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+.btn-loader {
+  margin-left: 8px;
+}
+
+.result-section {
+  background-color: #f8f9fa;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.result-header h3 {
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.email-preview {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.email-header {
+  background-color: #f1f3f4;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.email-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.email-field {
+  display: flex;
+}
+
+.field-name {
+  font-weight: 600;
+  color: #555;
+  width: 70px;
+}
+
+.field-value {
+  color: #333;
+}
+
+.email-body {
+  padding: 1.5rem;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 1rem;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-section {
+  animation: fadeIn 0.5s ease-out;
+}

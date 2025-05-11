@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kFyR2rUZRfbVuZFG7GgrOnV1/MUNhdWd5RYgP75zYoU=",
+  "Hash": "q/PhIm/2E0fUAmwxpeyhjSLPTwgQ/rNWqNegmQzK0Zs=",
   "Source": "PhishingGenerator",
   "BasePath": "_content/PhishingGenerator",
   "Mode": "Default",
@@ -185,6 +185,27 @@
       "OriginalItemSpec": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
+      "Identity": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/4f65xvurrn-0775d7kmek.gz",
+      "SourceId": "PhishingGenerator",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/PhishingGenerator",
+      "RelativePath": "js/phishingGenerator#[.{fingerprint=0775d7kmek}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/js/phishingGenerator.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "zmw8g49gkf",
+      "Integrity": "xXhJ2P8OY2vNwdx9wPMenvFz7XEu0Ri6QybMCZtZceY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/js/phishingGenerator.js"
+    },
+    {
       "Identity": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/4olmqtdwcb-37tfw0ft22.gz",
       "SourceId": "PhishingGenerator",
       "SourceType": "Discovered",
@@ -269,12 +290,12 @@
       "OriginalItemSpec": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Identity": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-b9sayid5wm.gz",
+      "Identity": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-z5blkhfbzg.gz",
       "SourceId": "PhishingGenerator",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/PhishingGenerator",
-      "RelativePath": "css/site#[.{fingerprint=b9sayid5wm}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=z5blkhfbzg}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -283,8 +304,8 @@
       "RelatedAsset": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/css/site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "pw5l7j5n1s",
-      "Integrity": "KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=",
+      "Fingerprint": "8w86qr9wix",
+      "Integrity": "eFeM1YjNnFTlLGw1DUqrMhtkW6J+68orcYNWSK75WA0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/css/site.css"
@@ -1417,8 +1438,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "b9sayid5wm",
-      "Integrity": "j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=",
+      "Fingerprint": "z5blkhfbzg",
+      "Integrity": "x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -1443,6 +1464,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/js/phishingGenerator.js",
+      "SourceId": "PhishingGenerator",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/",
+      "BasePath": "_content/PhishingGenerator",
+      "RelativePath": "js/phishingGenerator#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0775d7kmek",
+      "Integrity": "VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/phishingGenerator.js"
     },
     {
       "Identity": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/js/site.js",
@@ -2728,13 +2770,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.b9sayid5wm.css",
-      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-b9sayid5wm.gz",
+      "Route": "css/site.css",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-z5blkhfbzg.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.000958772771"
         }
       ],
       "ResponseHeaders": [
@@ -2744,19 +2786,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "1042"
         },
         {
           "Name": "ETag",
-          "Value": "\"KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=\""
+          "Value": "\"eFeM1YjNnFTlLGw1DUqrMhtkW6J+68orcYNWSK75WA0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 10:28:23 GMT"
+          "Value": "Sat, 10 May 2025 11:02:00 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -2772,26 +2814,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "b9sayid5wm"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css",
+      "Route": "css/site.css",
       "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/css/site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2801,7 +2835,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "3047"
         },
         {
           "Name": "Content-Type",
@@ -2809,11 +2843,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 10:28:23 GMT"
+          "Value": "Sat, 10 May 2025 11:02:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-z5blkhfbzg.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1042"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eFeM1YjNnFTlLGw1DUqrMhtkW6J+68orcYNWSK75WA0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:02:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eFeM1YjNnFTlLGw1DUqrMhtkW6J+68orcYNWSK75WA0="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.z5blkhfbzg.css",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-z5blkhfbzg.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000958772771"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1042"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eFeM1YjNnFTlLGw1DUqrMhtkW6J+68orcYNWSK75WA0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:02:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z5blkhfbzg"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.z5blkhfbzg.css",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3047"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:02:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2823,7 +3002,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "z5blkhfbzg"
         },
         {
           "Name": "label",
@@ -2831,13 +3010,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-x1O27xkB4xoWWtHhv4W86Og45y13PKmtqW9vBh77Dqg="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css.gz",
-      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-b9sayid5wm.gz",
+      "Route": "css/site.z5blkhfbzg.css.gz",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-z5blkhfbzg.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2846,7 +3025,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "1042"
         },
         {
           "Name": "Content-Type",
@@ -2854,11 +3033,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=\""
+          "Value": "\"eFeM1YjNnFTlLGw1DUqrMhtkW6J+68orcYNWSK75WA0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 10:28:23 GMT"
+          "Value": "Sat, 10 May 2025 11:02:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2876,7 +3055,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "z5blkhfbzg"
         },
         {
           "Name": "label",
@@ -2884,144 +3063,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-b9sayid5wm.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.003134796238"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "318"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 10:28:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/css/site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "667"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 10:28:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/5w15aodmon-b9sayid5wm.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "318"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 10:28:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA="
+          "Value": "sha256-eFeM1YjNnFTlLGw1DUqrMhtkW6J+68orcYNWSK75WA0="
         }
       ]
     },
@@ -3320,6 +3362,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-+/824NtfTA0L7Mr42Fo+86YJP4R5cigdi9S7Fx5VVl4="
+        }
+      ]
+    },
+    {
+      "Route": "js/phishingGenerator.0775d7kmek.js",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/4f65xvurrn-0775d7kmek.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000881834215"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xXhJ2P8OY2vNwdx9wPMenvFz7XEu0Ri6QybMCZtZceY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:01:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0775d7kmek"
+        },
+        {
+          "Name": "label",
+          "Value": "js/phishingGenerator.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU="
+        }
+      ]
+    },
+    {
+      "Route": "js/phishingGenerator.0775d7kmek.js",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/js/phishingGenerator.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2686"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:01:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0775d7kmek"
+        },
+        {
+          "Name": "label",
+          "Value": "js/phishingGenerator.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU="
+        }
+      ]
+    },
+    {
+      "Route": "js/phishingGenerator.0775d7kmek.js.gz",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/4f65xvurrn-0775d7kmek.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xXhJ2P8OY2vNwdx9wPMenvFz7XEu0Ri6QybMCZtZceY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:01:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0775d7kmek"
+        },
+        {
+          "Name": "label",
+          "Value": "js/phishingGenerator.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xXhJ2P8OY2vNwdx9wPMenvFz7XEu0Ri6QybMCZtZceY="
+        }
+      ]
+    },
+    {
+      "Route": "js/phishingGenerator.js",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/4f65xvurrn-0775d7kmek.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000881834215"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xXhJ2P8OY2vNwdx9wPMenvFz7XEu0Ri6QybMCZtZceY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:01:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU="
+        }
+      ]
+    },
+    {
+      "Route": "js/phishingGenerator.js",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/js/phishingGenerator.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2686"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:01:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VOPfB1NjkUnOs5hA8ZJ/jvOqpkK3JoqMDpcAw6iieVU="
+        }
+      ]
+    },
+    {
+      "Route": "js/phishingGenerator.js.gz",
+      "AssetFile": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/obj/Debug/net9.0/compressed/4f65xvurrn-0775d7kmek.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xXhJ2P8OY2vNwdx9wPMenvFz7XEu0Ri6QybMCZtZceY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 11:01:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xXhJ2P8OY2vNwdx9wPMenvFz7XEu0Ri6QybMCZtZceY="
         }
       ]
     },

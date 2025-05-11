@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/js/phishingGenerator.js",
+      "PackagePath": "staticwebassets/js/phishingGenerator.js"
+    },
+    {
       "Id": "/Users/furkan/Desktop/PhishingGenerator/PhishingGenerator/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

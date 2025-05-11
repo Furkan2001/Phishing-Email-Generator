@@ -1,0 +1,42 @@
+# Visual Studio ve .NET Core için .gitignore
+
+# Kullanıcı özel ayarları
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Derleme sonuçları
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio çalışma klasörleri
+.vs/
+.vscode/
+
+# ReSharper, Rider
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+
+# Yapılandırma dosyaları
+appsettings.json
+appsettings.Development.json
+appsettings.*.json
+*.pfx
+*.key
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# Diğer
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc

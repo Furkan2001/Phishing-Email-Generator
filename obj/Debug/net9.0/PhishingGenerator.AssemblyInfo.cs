@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhishingGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a332d12406eb5d9ed1b348aa2a11ea2453b6caa2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5bc092b248f6bc0e3ef89338183afc74edb116e")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhishingGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhishingGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
