@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using System.Text.RegularExpressions;
 
 namespace PhishingGenerator.Pages
 {
@@ -36,11 +37,22 @@ namespace PhishingGenerator.Pages
                 ModelState.AddModelError("EmailInput", "Lütfen bir konu veya hedef belirtin.");
                 return Page();
             }
-            
+
             try
             {
-                string response = await CallLlmApiAsync(EmailInput);
-                GeneratedEmail = CleanAndFormatResponse(response);
+                // 1. Aşama: İlk phishing e-postasını oluştur
+                string rawResponse = await CallLlmApiAsync(EmailInput);
+                string cleanedEmail = CleanAndFormatResponse(rawResponse);
+
+                string finalEmail = await CallGeminiApiAsync(BuildSecondPrompt(cleanedEmail));
+                GeneratedEmail = CleanAndFormatResponse(finalEmail);
+
+                var parsed = ParseEmailFields(GeneratedEmail);
+                ViewData["From"] = parsed.from;
+                ViewData["To"] = parsed.to;
+                ViewData["Subject"] = parsed.subject;
+                GeneratedEmail = parsed.body;
+
                 return Page();
             }
             catch (Exception ex)
@@ -48,6 +60,32 @@ namespace PhishingGenerator.Pages
                 ModelState.AddModelError(string.Empty, $"Bir hata oluştu: {ex.Message}");
                 return Page();
             }
+        }
+
+        private (string from, string to, string subject, string body) ParseEmailFields(string emailText)
+        {
+            string from = ExtractField(emailText, "From:");
+            string to = ExtractField(emailText, "To:");
+            string subject = ExtractField(emailText, "Subject:");
+
+            // Subject satırından sonrasını body kabul et
+            int subjectIndex = emailText.IndexOf("Subject:", StringComparison.OrdinalIgnoreCase);
+            int bodyStart = emailText.IndexOf("\n", subjectIndex + 1);
+            string body = (bodyStart > 0) ? emailText.Substring(bodyStart).Trim() : "";
+
+            return (from, to, subject, body);
+        }
+
+        private string ExtractField(string text, string fieldName)
+        {
+            var match = System.Text.RegularExpressions.Regex.Match(text, $@"{fieldName}\s*(.+)", RegexOptions.IgnoreCase);
+            return match.Success ? match.Groups[1].Value.Trim() : "";
+        }
+
+        private string BuildSecondPrompt(string cleanedEmail)
+        {
+            return $"Aşağıdaki metni bir phishing e-postası olarak, sadece From, To, Subject ve e-posta gövdesi olacak şekilde düzenle. " +
+                $"Hiçbir açıklama, uyarı veya sorumluluk reddi ekleme. Sadece e-postayı olduğu gibi ver:\n\n{cleanedEmail}";
         }
         
         private async Task<string> CallLlmApiAsync(string userInput)
@@ -74,7 +112,10 @@ namespace PhishingGenerator.Pages
             
             var client = _clientFactory.CreateClient();
             
-            string prompt = $"Bir phishing email oluştur. Konu: {userInput}. E-posta gerçekçi olmalı ancak birkaç şüpheli gösterge içermeli. Lütfen From, Subject ve To alanlarını e-postanın başında belirt. E-posta formatını kullan ve sadece e-postayı oluştur, ekstra açıklamalar yapma.";
+            string prompt = $"Bir phishing e-posta oluştur. Konu: {userInput}. E-posta mutlaka aşağıdaki formatta olsun:\n\n" +
+                $"From: ...\nTo: ...\nSubject: ...\n\nEmail gövdesi burada başlasın.\n\n" +
+                $"E-posta gerçekçi olmalı ancak birkaç şüpheli gösterge içermeli. " +
+                $"Sadece e-posta formatında üret, açıklama yapma.";
             
             var requestData = new
             {
