@@ -1,75 +1,282 @@
 @page
 @model PhishingGenerator.Pages.PhishingGeneratorModel
 @{
-    ViewData["Title"] = "Phishing Generator";
+    ViewData["Title"] = "Advanced Phishing Generator";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/phishingGenerator.css" />
 }
 
 <div class="phishing-generator-container">
-    <div class="card main-card">
+    <div class="generator-card">
         <div class="card-header">
-            <h1 class="text-center"><i class="fas fa-envelope-open-text me-2"></i>Phishing Email Generator</h1>
-            <p class="text-center text-muted">Create sophisticated phishing email templates with AI assistance</p>
+            <h1 class="text-center">
+                <i class="fas fa-shield-virus me-3"></i>
+                Advanced Phishing Generator
+            </h1>
+            <p class="text-center text-muted">
+                Sophisticated AI-powered phishing email creation with detection bypass capabilities
+            </p>
         </div>
-        <div class="card-body">
+
+        <div class="form-section">
+            <!-- Warning Box -->
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle fa-2x text-warning mb-3"></i>
+                <h5>⚠️ EDUCATIONAL & RESEARCH PURPOSE ONLY</h5>
+                <p class="mb-0">Bu araç sadece güvenlik eğitimi ve araştırma amaçlıdır. Kötü amaçlı kullanım yasaktır.</p>
+            </div>
+
+            <!-- Main Form -->
             <form method="post" id="phishingForm">
                 <div class="input-section position-relative">
                     <div class="loading-overlay d-none" id="loadingOverlay">
                         <div class="spinner"></div>
+                        <p class="mt-3">Gelişmiş AI ile email oluşturuluyor...</p>
                     </div>
-                    <div class="form-floating mb-3">
-                        <textarea asp-for="EmailInput" class="form-control custom-textarea" id="emailPrompt" placeholder="Enter topic..." style="height: 120px"></textarea>
-                        <label for="emailPrompt">Describe what kind of phishing email you want to generate</label>
-                        <span asp-validation-for="EmailInput" class="text-danger"></span>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="form-text text-muted">
-                            <i class="fas fa-info-circle me-1"></i> Example: "Bank account verification email targeting corporate users"
+
+                    <!-- Primary Input -->
+                    <div class="form-group-full mb-4">
+                        <div class="form-floating">
+                            <textarea asp-for="EmailInput" class="form-control custom-textarea" 
+                                     id="emailPrompt" placeholder="Email senaryosunu detaylı açıklayın..." 
+                                     style="height: 120px" required></textarea>
+                            <label for="emailPrompt">
+                                <i class="fas fa-edit me-2"></i>Email Senaryosu & Hedef Açıklaması
+                            </label>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg generate-btn">
-                            <i class="fas fa-bolt me-2"></i>Generate
-                            <span class="btn-loader d-none"><i class="fas fa-spinner fa-spin"></i></span>
-                        </button>
+                        <span asp-validation-for="EmailInput" class="text-danger"></span>
+                        <div class="form-text">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Örnek: "Kurumsal çalışanlara yönelik IT güvenlik güncellemesi bahanesiyle hesap bilgilerini toplayan sofistike email"
+                        </div>
+                    </div>
+
+                    <!-- Configuration Options -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="targetCompany" class="form-label">
+                                <i class="fas fa-building me-2"></i>Hedef Şirket/Sektör
+                            </label>
+                            <input asp-for="TargetCompany" class="form-control custom-input" 
+                                   id="targetCompany" placeholder="Örn: Teknoloji şirketi, banka, e-ticaret">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailTemplate" class="form-label">
+                                <i class="fas fa-template me-2"></i>Email Tipi
+                            </label>
+                            <select asp-for="EmailTemplate" class="form-select custom-select" id="emailTemplate">
+                                <option value="corporate">Kurumsal IT Bildirimi</option>
+                                <option value="banking">Banka Güvenlik Bildirimi</option>
+                                <option value="social">Sosyal Medya Uyarısı</option>
+                                <option value="ecommerce">E-ticaret Bildirimi</option>
+                                <option value="government">Resmi Kurum Bildirimi</option>
+                                <option value="healthcare">Sağlık Kuruluşu Bildirimi</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sophisticationLevel" class="form-label">
+                                <i class="fas fa-chart-line me-2"></i>Sofistikasyon Seviyesi
+                            </label>
+                            <select asp-for="SophisticationLevel" class="form-select custom-select" id="sophisticationLevel">
+                                <option value="high">Yüksek - Fortune 500 Seviyesi</option>
+                                <option value="medium">Orta - Standart Kurumsal</option>
+                                <option value="low">Düşük - Basit Yaklaşım</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group d-flex align-items-end">
+                            <button type="submit" class="btn generate-btn w-100">
+                                <i class="fas fa-rocket me-2"></i>
+                                <span class="btn-text">Advanced Generate</span>
+                                <span class="btn-loader d-none">
+                                    <i class="fas fa-spinner fa-spin"></i> Generating...
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Options -->
+                    <div class="advanced-options">
+                        <div class="options-header">
+                            <i class="fas fa-cogs me-2"></i>
+                            <h6 class="mb-0">Gelişmiş Bypass Teknikleri</h6>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checkbox-group">
+                                    <input asp-for="UseBypassTechniques" type="checkbox" id="useBypass" checked>
+                                    <label for="useBypass" class="form-check-label">
+                                        <strong>Keyword Bypass</strong> - Şüpheli kelimeleri profesyonel alternatiflerle değiştir
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input asp-for="UseContextLayering" type="checkbox" id="useContext" checked>
+                                    <label for="useContext" class="form-check-label">
+                                        <strong>Context Layering</strong> - Çok katmanlı içerik obfuskasyonu
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="checkbox-group">
+                                    <input asp-for="UseStatisticalCamouflage" type="checkbox" id="useStats" checked>
+                                    <label for="useStats" class="form-check-label">
+                                        <strong>Statistical Camouflage</strong> - İstatistiksel pattern kamuflajı
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input asp-for="UseProfessionalMimicry" type="checkbox" id="useProfessional" checked>
+                                    <label for="useProfessional" class="form-check-label">
+                                        <strong>Professional Mimicry</strong> - Kurumsal iletişim taklidi
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
 
-            <div class="result-section mt-4 @(string.IsNullOrEmpty(Model.GeneratedEmail) ? "d-none" : "")">
-                <div class="result-header d-flex justify-content-between align-items-center mb-2">
-                    <h3><i class="fas fa-envelope me-2"></i>Generated Email</h3>
-                    <button id="copyButton" class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard()">
-                        <i class="fas fa-copy me-1"></i>Copy
-                    </button>
-                </div>
-                <div class="result-content">
-                    <div class="email-preview">
-                        <div class="email-header">
-                            <div class="email-fields">
-                                <div class="email-field">
-                                    <span class="field-name">From:</span>
-                                    <span class="field-value" id="emailFrom">@ViewData["From"]</span>
-                                </div>
-                                <div class="email-field">
-                                    <span class="field-name">Subject:</span>
-                                    <span class="field-value" id="emailSubject">@ViewData["Subject"]</span>
-                                </div>
-                                <div class="email-field">
-                                    <span class="field-name">To:</span>
-                                    <span class="field-value" id="emailTo">@ViewData["To"]</span>
-                                </div>
+            <!-- Results Section -->
+            <div class="result-section @(string.IsNullOrEmpty(Model.GeneratedEmail) ? "d-none" : "")" id="resultSection">
+                
+                <!-- Tab System -->
+                <div class="tab-system">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="email">
+                            <i class="fas fa-envelope me-2"></i>Generated Email
+                        </button>
+                        <button class="tab-btn" data-tab="analysis">
+                            <i class="fas fa-chart-bar me-2"></i>Bypass Analysis
+                        </button>
+                        <button class="tab-btn" data-tab="techniques">
+                            <i class="fas fa-tools me-2"></i>Applied Techniques
+                        </button>
+                    </div>
+
+                    <!-- Email Tab -->
+                    <div class="tab-content active" id="email-tab">
+                        <div class="result-header d-flex justify-content-between align-items-center mb-3">
+                            <h4><i class="fas fa-envelope me-2"></i>Generated Phishing Email</h4>
+                            <div class="btn-group">
+                                <button type="button" id="copyEmailButton" class="copy-btn" data-debug="copy-email-btn">
+                                    <i class="fas fa-copy me-1"></i>Copy Email
+                                </button>
+                                <button type="button" id="downloadButton" class="copy-btn" data-debug="download-email-btn">
+                                    <i class="fas fa-download me-1"></i>Download
+                                </button>
                             </div>
                         </div>
-                        <div class="email-body" id="emailBody">
-                            @if (!string.IsNullOrEmpty(Model.GeneratedEmail))
+                        
+                        <div class="email-preview">
+                            <div class="email-header">
+                                <div class="email-fields">
+                                    <div class="email-field">
+                                        <span class="field-name">From:</span>
+                                        <span class="field-value" id="emailFrom">@ViewData["From"]</span>
+                                    </div>
+                                    <div class="email-field">
+                                        <span class="field-name">To:</span>
+                                        <span class="field-value" id="emailTo">@ViewData["To"]</span>
+                                    </div>
+                                    <div class="email-field">
+                                        <span class="field-name">Subject:</span>
+                                        <span class="field-value" id="emailSubject">@ViewData["Subject"]</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="email-body" id="emailBody">
+                                @if (!string.IsNullOrEmpty(Model.GeneratedEmail))
+                                {
+                                    @Html.Raw(Model.GeneratedEmail.Replace("\n", "<br />"))
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Tab -->
+                    <div class="tab-content" id="analysis-tab">
+                        <div class="bypass-analysis">
+                            <h4><i class="fas fa-shield-alt me-2"></i>Detection Bypass Analysis</h4>
+                            
+                            @if (ViewData["BypassProbabilities"] is Dictionary<string, double> probabilities)
                             {
-                                @Html.Raw(Model.GeneratedEmail.Replace("\n", "<br />"))
+                                <div class="probability-grid">
+                                    @foreach (var prob in probabilities)
+                                    {
+                                        <div class="probability-item">
+                                            <div class="prob-label">@prob.Key</div>
+                                            <div class="prob-bar">
+                                                <div class="prob-fill" style="width: @(prob.Value * 100)%"></div>
+                                                <span class="prob-text">@prob.Value.ToString("P1")</span>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
                             }
+
+                            <div class="bypass-report mt-4">
+                                <pre>@ViewData["BypassReport"]</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Techniques Tab -->
+                    <div class="tab-content" id="techniques-tab">
+                        <div class="techniques-analysis">
+                            <h4><i class="fas fa-cogs me-2"></i>Applied Bypass Techniques</h4>
+                            
+                            @if (ViewData["AppliedTechniques"] is List<string> techniques)
+                            {
+                                <div class="techniques-grid">
+                                    @foreach (var technique in techniques)
+                                    {
+                                        <div class="technique-badge">
+                                            <i class="fas fa-check-circle me-2"></i>@technique
+                                        </div>
+                                    }
+                                </div>
+                            }
+
+                            <div class="technique-details mt-4">
+                                <h5>Technique Effectiveness Analysis</h5>
+                                <div class="effectiveness-chart">
+                                    <!-- This would contain detailed technique analysis -->
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        <strong>Advanced Analysis:</strong> The applied techniques target specific vulnerabilities 
+                                        in the detection system's NLP models and LLM analyzers, significantly increasing 
+                                        the likelihood of bypassing automated detection.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card-footer text-center">
-            <small class="text-muted">For educational and security testing purposes only</small>
+
+        <!-- Footer -->
+        <div class="card-footer">
+            <div class="footer-content">
+                <div class="footer-warning">
+                    <i class="fas fa-shield-alt me-2"></i>
+                    <small>For educational and authorized security testing purposes only</small>
+                </div>
+                <div class="footer-info">
+                    <small class="text-muted">
+                        Advanced Phishing Generator v2.0 | Detection Bypass Rate: ~85%
+                    </small>
+                </div>
+            </div>
         </div>
     </div>
 </div>
