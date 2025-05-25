@@ -74,4 +74,8 @@ Bu dosya, Razor sayfasının arka plan kodlarını içerir. `PhishingEmailModel`
 
 ![Ekran Resmi 2025-05-11 12 08 14](https://github.com/user-attachments/assets/e8c966a9-a165-4615-bf41-8a3e8abcb9b2)
 
-![Ekran Resmi 2025-05-11 12 05 00](https://github.com/user-attachments/assets/4bceb2c8-efdf-4091-ba6f-05087b1bd123)
+![Ekran Resmi 2025-05-25 16 01 55](https://github.com/user-attachments/assets/707a8b00-82b7-4ed5-97f8-72fe5ed0375b)
+
+![Ekran Resmi 2025-05-25 16 02 06](https://github.com/user-attachments/assets/94c176b8-34dc-4fff-9667-03d02366940f)
+
+
