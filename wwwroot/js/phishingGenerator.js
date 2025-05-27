@@ -851,23 +851,6 @@ class PhishingGenerator {
     }
 }
 
-// Global functions for backward compatibility and direct calling
-window.copyEmailToClipboard = function() {
-    if (window.phishingGenerator) {
-        window.phishingGenerator.copyEmailToClipboard();
-    } else {
-        console.error('PhishingGenerator instance not found');
-    }
-};
-
-window.downloadEmail = function() {
-    if (window.phishingGenerator) {
-        window.phishingGenerator.downloadEmail();
-    } else {
-        console.error('PhishingGenerator instance not found');
-    }
-};
-
 // Initialize when DOM is loaded and store instance globally
 document.addEventListener('DOMContentLoaded', () => {
     try {
